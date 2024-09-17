@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta Tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kora Live - Ver el calendario de los partidos de fútbol en vivo. Descubre cuándo juegan tus equipos favoritos en La Liga, Premier League y más.">
+    <meta name="keywords" content="kora live, calendario de partidos, fútbol en vivo, streaming de fútbol, deportes gratis, La Liga, Premier League, ver fútbol online">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph and Twitter Card Tags -->
+    <meta property="og:title" content="Kora Live - Calendario de Partidos de Fútbol">
+    <meta property="og:description" content="Consulta el calendario de partidos de fútbol en vivo con Kora Live. No te pierdas ni un solo encuentro.">
+    <meta property="og:image" content="https://koralive.1mrgamingstreams.com/logo.png"> <!-- Replace with your logo -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kora Live - Calendario de Partidos de Fútbol">
+    <meta name="twitter:description" content="Descubre cuándo juegan tus equipos favoritos y sigue el calendario de partidos en Kora Live.">
+    <meta name="twitter:image" content="https://koralive.1mrgamingstreams.com/logo.png">
+
+    <title>Kora Live - Calendario de Partidos de Fútbol</title>
+
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Styling -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #1d1d1d;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-family: 'Oswald', sans-serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #d32f2f;
+            margin-bottom: 20px;
+        }
+
+        .schedule {
+            margin-top: 30px;
+        }
+
+        .match {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .match h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #333;
+            margin: 0;
+        }
+
+        .match time {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .cta-button {
+            background-color: #d32f2f;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #a92a2a;
+        }
+
+        footer {
+            background-color: #1d1d1d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .match {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+
+    <!-- JavaScript to Fetch and Display Schedule -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const scheduleContainer = document.querySelector('.schedule');
+
+            // Fetch the match schedule from the main website's schedule link
+            fetch('https://1mrgamingstreams.com/schedule/')
+                .then(response => response.text())
+                .then(data => {
+                    // Parse the response and extract match information
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, 'text/html');
+                    const matchElements = doc.querySelectorAll('.match'); // Assuming class "match" exists in the source page
+
+                    matchElements.forEach(match => {
+                        // Create match elements for this page
+                        const matchTitle = match.querySelector('h3').innerText;
+                        const matchTime = match.querySelector('time').innerText;
+                        
+                        const matchDiv = document.createElement('div');
+                        matchDiv.classList.add('match');
+                        
+                        matchDiv.innerHTML = `
+                            <h3>${matchTitle}</h3>
+                            <time>${matchTime}</time>
+                            <a href="https://1mrgamingstreams.com/schedule/" class="cta-button" target="_blank">Ver Detalles</a>
+                        `;
+                        
+                        scheduleContainer.appendChild(matchDiv);
+                    });
+                })
+                .catch(error => {
+                    scheduleContainer.innerHTML = '<p>No se pudo cargar el calendario de partidos en este momento. Inténtalo más tarde.</p>';
+                });
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        Kora Live - Calendario de Partidos
+    </header>
+
+    <div class="container">
+        <h1>Calendario de Partidos de Fútbol en Vivo</h1>
+        
+        <div class="schedule">
+            <!-- Matches will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Kora Live. Todos los derechos reservados.
+    </footer>
+
+</body>
+</html>
