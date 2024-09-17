@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta Tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Transmisión en vivo de los mejores partidos de fútbol gratis. Disfruta de La Liga, Premier League y más partidos en tiempo real.">
+    <meta name="keywords" content="fútbol en vivo, streaming de fútbol, deportes gratis, liga, la liga, premier league, partidos en vivo, ver fútbol online">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph and Twitter Card Tags -->
+    <meta property="og:title" content="Deportes Gratis - Fútbol en Vivo">
+    <meta property="og:description" content="Disfruta del streaming en vivo de los mejores partidos de fútbol. La Liga, Premier League y más partidos en tiempo real.">
+    <meta property="og:image" content="https://deportesgratis.us/logo.png"> <!-- Replace with your logo -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Deportes Gratis - Fútbol en Vivo">
+    <meta name="twitter:description" content="Disfruta del streaming en vivo de los mejores partidos de fútbol. La Liga, Premier League y más partidos en tiempo real.">
+    <meta name="twitter:image" content="https://deportesgratis.us/logo.png">
+
+    <title>Deportes Gratis - Fútbol en Vivo</title>
+
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data for FAQ Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué partidos de fútbol puedo ver en vivo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ofrecemos transmisiones en vivo de una amplia variedad de competiciones, incluyendo La Liga, Premier League, Champions League, y muchas más. Revisa nuestro calendario de partidos para ver los próximos encuentros."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es gratis ver los partidos en vivo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, todos los partidos que transmitimos en nuestro sitio web son completamente gratuitos. No necesitas pagar para acceder a las transmisiones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo ver los partidos en mi móvil o tablet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, nuestro sitio está optimizado para funcionar en dispositivos móviles y tablets, lo que te permite ver los partidos en cualquier momento y lugar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es legal transmitir los partidos en este sitio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nosotros simplemente enlazamos a transmisiones disponibles públicamente en internet. Te recomendamos que verifiques las leyes locales relacionadas con la transmisión de eventos deportivos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué puedo hacer si la transmisión no funciona?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si la transmisión no está funcionando, te sugerimos que recargues la página o intentes con otra fuente. También puedes revisar nuestra página de soporte en Telegram para obtener ayuda."
+          }
+        }
+      ]
+    }
+    </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-17BN46PSBK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-17BN46PSBK');
+</script>
+    <!-- AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" crossorigin="anonymous"></script>
+    <script data-ad-client="ca-pub-8695615805843515" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <!-- AdSense Auto Ads -->
+
+    <!-- Styling -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #1d1d1d;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-family: 'Oswald', sans-serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #d32f2f;
+            margin-bottom: 20px;
+        }
+
+        .video-frame {
+            width: 100%;
+            height: 500px;
+            border: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #d32f2f;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Oswald', sans-serif;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #a92a2a;
+        }
+
+        .faq-section {
+            margin-top: 50px;
+        }
+
+        .faq-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #d32f2f;
+            margin-bottom: 20px;
+        }
+
+        .faq {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .faq p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: #1d1d1d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        /* Sticky Banner Ad */
+        .sticky-banner {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background-color: white;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                margin: 10px 0;
+                width: 80%;
+                text-align: center;
+            }
+
+            .video-frame {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        Deportes Gratis - Fútbol en Vivo
+    </header>
+
+    <div class="container">
+        <h1>Transmisión en Vivo de Fútbol</h1>
+
+        <!-- Sticky Ad Banner -->
+        <div class="sticky-banner">
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:320px;height:50px"
+                 data-ad-client="ca-pub-8695615805843515"
+                 data-ad-slot="1130940532"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- AdSense Auto Ads Ad -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8695615805843515"
+             data-ad-slot="1130940532"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <!-- Video Player iFrame -->
+ <div class="video-wrapper">
+        <iframe id="liveStream" 
+                class="video-frame"
+                src="https://livetv-7rn.pages.dev/ch6?autoplay=1&mute=0" 
+                allow="autoplay; fullscreen; picture-in-picture; accelerometer; clipboard-write; encrypted-media; gyroscope"
+                sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                allowfullscreen>
+        </iframe>
+    </div>
+
+        <!-- Call-to-Action Buttons -->
+        <div class="cta-buttons">
+            <a href="https://telegram.me/+VTXMUZilUCo4ZmI1" class="cta-button">Únete a Telegram</a>
+            <a href="https://v1.1mrgamingstreams.com/" class="cta-button" target="_blank">Ver Calendario de Partidos</a>
+            <a href="https://telegram.me/+VTXMUZilUCo4ZmI1" class="cta-button">Recibe Actualizaciones</a>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Preguntas Frecuentes (FAQ)</h2>
+
+            <div class="faq">
+                <h3>¿Qué partidos de fútbol puedo ver en vivo?</h3>
+                <p>Ofrecemos transmisiones en vivo de una amplia variedad de competiciones, incluyendo La Liga, Premier League, Champions League, y muchas más. Revisa nuestro <a href="https://v1.1mrgamingstreams.com/">calendario de partidos</a> para ver los próximos encuentros.</p>
+            </div>
+
+            <div class="faq">
+                <h3>¿Es gratis ver los partidos en vivo?</h3>
+                <p>Sí, todos los partidos que transmitimos en nuestro sitio web son completamente gratuitos. No necesitas pagar para acceder a las transmisiones.</p>
+            </div>
+
+            <div class="faq">
+                <h3>¿Puedo ver los partidos en mi móvil o tablet?</h3>
+                <p>Sí, nuestro sitio está optimizado para funcionar en dispositivos móviles y tablets, lo que te permite ver los partidos en cualquier momento y lugar.</p>
+            </div>
+
+            <div class="faq">
+                <h3>¿Es legal transmitir los partidos en este sitio?</h3>
+                <p>Nosotros simplemente enlazamos a transmisiones disponibles públicamente en internet. Te recomendamos que verifiques las leyes locales relacionadas con la transmisión de eventos deportivos.</p>
+            </div>
+
+            <div class="faq">
+                <h3>¿Qué puedo hacer si la transmisión no funciona?</h3>
+                <p>Si la transmisión no está funcionando, te sugerimos que recargues la página o intentes con otra fuente. También puedes revisar nuestra página de soporte en Telegram para obtener ayuda.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        &copy; 2024 Deportes Gratis. Todos los derechos reservados.
+    </footer>
+
+<!-- Optional JavaScript for Fullscreen & Autoplay -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var iframe = document.getElementById('liveStream');
+        
+        // Check if the browser supports fullscreen API
+        function requestFullScreen(element) {
+            if (element.requestFullscreen) {
+                element.requestFullscreen();
+            } else if (element.mozRequestFullScreen) { /* Firefox */
+                element.mozRequestFullScreen();
+            } else if (element.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                element.webkitRequestFullscreen();
+            } else if (element.msRequestFullscreen) { /* IE/Edge */
+                element.msRequestFullscreen();
+            }
+        }
+
+        // Autoplay logic - Automatically play the video on load
+        iframe.addEventListener('load', function () {
+            // Optionally, trigger fullscreen for better user experience
+            requestFullScreen(iframe);
+        });
+    });
+</script>
+</body>
+</html>
