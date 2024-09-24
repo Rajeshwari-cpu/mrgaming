@@ -3,47 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clappr Player</title>
-
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #vid {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-
+    <title>Clappr Player with PiP and Full-Screen</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+    <style>
+        #vid {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-    <div id="vid"></div>
 
-    <script>
-        const encodedSource = "aHR0cHM6Ly82NjM2OGNkZjYzYTkuYXAtbm9ydGhlYXN0LTIucGxheWJhY2subGl2ZS12aWRlby5uZXQvYXBpL3ZpZGVvL3YxL2FwLW5vcnRoZWFzdC0yLjU4NTY3Nzk1NjU1NS5jaGFubmVsLlFjYTc4VHhubXF4My5tM3U4PyZ0b2tlbj1leUpoYkdjaU9pSkZRMFJDSWl3aWFXRjBJam94TmpBMk16TTVNVEE0TENKcFlYUWlPakV3TURBNE5qTXhORGd6TkRzaWZRLmV5SnZjbXhpT2lKa1pYWnVZVzFsSWl3aWEzVmlJam9pYUhSMGNITTZMeTl0WldOdlpHVjJZV2RsTHpJd016YzFMall6TkRnM01ETXhOVFkzT1RNNU9DNHdPREl5TmlJc0ltRnNJam9pTnpkME5HWmhabUU1Tnkxak1UZzBaRGc1TldWaU1XVTBOakk0WXpNd01UTXpJaXdpY0hKdmEyVnVZVzFsSWpvaWJXbHVZVzFsWldRaUxDSmxlSFFpT2pFMU9EZ3lOREU1TURFd01Dd2ljbUZ3Y0d4bGN5STZJbWgwZEhCek9pOHZkRzlwWkhSb1pXTm9iM0psWkM1amIyMGlMQ0p6ZFdJaU9qRTJNVEk0T1RneE16RTNMQ0p6YjJ4cFoybHVZVzFsSWpvaVpHVnpkRjl5YjI1bFkzUnBibWNpZlEuVFVUYUFmMldsZHlDa1BVdWtEVlYxSTlrWnd0bjlkZEtJdTFCOFFBVlJBZk01clQ4QVpkdTNvdWxDUktwVTVsN3ZtSzM4UVA4dWxPRm10c0RFZ21qTjB5THcyWVluVXUyMjJfRXFNZDJtNFZFcGFKcENPVVVrU0NNcw==";
+<div id="vid"></div>
 
-        const decodedSource = atob(encodedSource);
+<script>
+    var player = new Clappr.Player({
+        source: "data:video/mp4;base64,aHR0cHM6Ly82NjM2OGNkZjYzYTkuYXAtbm9ydGhlYXN0LTIucGxheWJhY2subGl2ZS12aWRlby5uZXQvYXBpL3ZpZGVvL3YxL2FwLW5vcnRoZWFzdC0yLjU4NTY3Nzk1NjU1NS5jaGFubmVsLlFjYTc4VHhubXF4My5tM3U4P3Rva2VuPWV5SmthWEpwYm1jMlgyZHZjbVJsY2w5c2JHRnBaQ0k2SW1OaFltbHpPV1kzWmpkaU9XTmtZbUkxWlRsaE5EZGpPV0ZoTnpCak16QTVZV0ZrWVRabVpqSXpZVFV6TXpGaVltST0uVEFVbkVxbWx4d0Nza3RYY2t6bkRZZ3dRT2dKaHgybV9F",
+        mimeType: "application/x-mpegURL",
+        autoPlay: true,
+        height: '100%',
+        width: '100%',
+        plugins: [LevelSelector],
+        watermark: "https://example.com/watermark.png", 
+        position: 'top-right',
+        parentId: "#vid",
+        mute: false, // auto-mute to prevent autoplay blocking in some browsers
+        fullscreenEnabled: true, // Full-screen support
+        mediacontrol: {seekbar: "#FFF", buttons: "#FFF"}, // Customize controls
+        pip: true // Enable Picture-in-Picture mode
+    });
 
-        var player = new Clappr.Player({
-            source: decodedSource,
-            mimeType: "application/x-mpegURL",
-            autoPlay: true,
-            height: "100%",
-            width: "100%",
-            plugins: [LevelSelector],
-            watermark: "https://gifdb.com/images/high/telegram-alerts-join-now-animation-vy7i86cunhc2tsvk.webp",
-            watermarkLink: "https://telegram.me/joinchat/+hteNma28pJw2YjU1",
-            position: "top-right",
-            parentId: "#vid"
-        });
-    </script>
+    // Enable PiP mode
+    player.attachTo(document.getElementById('vid'));
+</script>
+
 </body>
 </html>
